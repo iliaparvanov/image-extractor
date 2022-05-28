@@ -1,0 +1,25 @@
+version: '3.9'
+services:
+    web:
+        build: .
+        # command: bash -c "python /web/manage.py runserver --noreload 0.0.0.0:8000 "
+        environment:
+            - SECRET_KEY=0j*h)c9mw05oy26#8*c5wl3aq@mmby0o0*@2+yju)$$-_#pk2!)
+            - DEBUG=True
+        volumes:
+            - .:/image-extractor
+        ports:
+            - 8000:8000
+        depends_on: 
+            - db
+
+    db:
+        image: postgres:14
+        environment: 
+            - POSTGRES_HOST_AUTH_METHOD=trust
+        volumes:
+            - postgres_data:/var/lib/postgresql/data/
+
+volumes:
+    postgres_data:
+                
