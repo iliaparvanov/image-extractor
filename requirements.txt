@@ -1,4 +1,10 @@
 Django>3.0,<4.0
 djangorestframework>=3.13
-markdown
-django-filter
+drf-spectacular==0.22.1
+psycopg2>=2.9
+requests
+APScheduler
+filetype
+Pillow
+pyyaml
+uritemplate
